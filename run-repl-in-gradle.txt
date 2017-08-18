@@ -1,0 +1,10 @@
+From the console a number of options are needed to run the REPL:
+
+--no-daemon, if you are using a Gradle daemon. At the moment, the REPL does not respond to keystrokes if run from the daemon.
+--console plain. A popular, but inferior alternative is --quiet. If run without one of these options, REPL's prompt is contaminated by Gradle's progress report. --console plain has the advantage that it also adjusts readline's behaviour so that rlwrap is unnecessary.
+
+Full command to run the REPL is gradle repl --console plain --no-daemon, so creating an alias in your shell makes sense.
+
+So:
+
+gradle repl --console plain --no-daemon
