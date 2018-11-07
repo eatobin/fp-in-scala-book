@@ -1,7 +1,5 @@
 // Exercise 4: Implement `uncurry`
-def uncurry[A, B, C](f: A => (B => C)): (A, B) => C = {
-  (a, b) => f(a)(b)
-}
+def uncurry[A, B, C](f: A => B => C): (A, B) => C = (a, b) => f(a)(b)
 
 def uncurryTest(): Int = {
   val a: Int = 20
