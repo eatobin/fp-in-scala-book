@@ -13,3 +13,5 @@ val it2 = numbers.foldLeft(0) { (a, i) =>
   a + i
 }
 println(it2) // 25
+
+// scala> :load ./scripts/my-scripts/it.scala

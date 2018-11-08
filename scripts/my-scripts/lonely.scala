@@ -187,3 +187,5 @@ c: there r: List(lonely, girl)
 c: hey r: List(there, lonely, girl)
 List(hey, there, lonely, girl)
 */
+
+// scala> :load ./scripts/my-scripts/lonely.scala

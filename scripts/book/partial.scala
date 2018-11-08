@@ -51,3 +51,5 @@ b(200)
 var more = 1
 val addMore = (x: Int) => x + more
 addMore(10)
+
+// scala> :load ./scripts/book/partial.scala

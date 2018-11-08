@@ -21,3 +21,5 @@ println(curry((a: Int, b: Int) => a - b))
 
 println(curry((a: Int, b: Int) => a - b)(22)(7)) // BEST
 println(curry((a: String, b: String) => a + b)("Here's word 1 and ")("here's word 2."))
+
+// scala> :load ./scripts/book/exercise3.scala

@@ -13,4 +13,4 @@ println("show(capitals.get( \"Japan\")) : " +
 println("show(capitals.get( \"India\")) : " +
   show(capitals.get("India"))) // show(capitals.get( "India")) : ?
 
-// :load /Users/eatobin/scala_projects/fp-in-scala/scripts/my-scripts/capitals.scala
+// scala> :load ./scripts/my-scripts/capitals.scala

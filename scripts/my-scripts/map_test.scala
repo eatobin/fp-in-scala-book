@@ -23,3 +23,5 @@ def identFun[X](x: X): X = x
 
 println(constFun1("jjjj"))
 println(identFun("jjjj"))
+
+// scala> :load ./scripts/my-scripts/map_test.scala

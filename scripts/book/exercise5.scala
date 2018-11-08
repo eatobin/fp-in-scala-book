@@ -11,3 +11,5 @@ def composeTest(): Int = {
 println(compose((b: Int) => b * 1, (a: Int) => a * 1))
 println(composeTest())
 println(compose((b: Int) => b * 10, (a: Int) => a + 5)(3))
+
+// scala> :load ./scripts/book/exercise5.scala

@@ -14,3 +14,5 @@ def formatFib(x: Int) = {
 }
 
 println(formatFib(31))
+
+// scala> :load ./scripts/book/exercise1.scala
