@@ -1,10 +1,12 @@
-name := """fp-in-scala"""
+ThisBuild / scalaVersion := "2.12.8"
+ThisBuild / version := "0.1.0-SNAPSHOT"
+ThisBuild / organization := "com.example"
+ThisBuild / organizationName := "example"
 
-version := "1.0"
-
-scalaVersion := "2.12.7"
-
-sbtVersion := "1.2.1"
-
-// Change this to another test framework if you prefer
-libraryDependencies += "org.scalatest" % "scalatest_2.12" % "3.0.5" % "test"
+lazy val root = (project in file("."))
+  .settings(
+    name := "fp-in-scala",
+    libraryDependencies ++= Seq(
+      "org.scalatest" %% "scalatest" % "3.0.5" % Test
+    )
+  )
