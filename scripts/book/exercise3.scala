@@ -1,8 +1,8 @@
 // Exercise 3: Implement `curry`.
 // Note that `=>` associates to the right, so we could
 // write the return type as `A => B => C`
-def curry[A, B, C](f: (A, B) => C): A => (B => C) = {
-  (a) => (b) => f(a, b)
+def curry[A, B, C](f: (A, B) => C): A => B => C = {
+  a => b => f(a, b)
 }
 
 def curryTest(): Int = {
