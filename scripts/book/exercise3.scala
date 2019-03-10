@@ -14,6 +14,8 @@ def curryTest(): Int = {
   last
 }
 
+curryTest()
+
 println(curry((a: Int, b: Int) => a + b))
 println(curry((a: Int, b: Int) => a - b))
 
