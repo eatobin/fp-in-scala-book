@@ -14,4 +14,7 @@ println(isSorted(Array(1, 2, 3, 4), (a: Int, b: Int) => a > b))
 println(isSorted(Array(1, 2, 34, 4), (a: Int, b: Int) => a > b))
 println(isSorted(Array(10, 20, 30, 4), (a: Int, b: Int) => a > b))
 
+println(isSorted(Array("cat", "mouse", "zebra"), (a: String, b: String) => a > b))
+println(isSorted(Array("cat", "mouse", "zebra", "horse"), (a: String, b: String) => a > b))
+
 // :load ./scripts/book/exercise2.scala
