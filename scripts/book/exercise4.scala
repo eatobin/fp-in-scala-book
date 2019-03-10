@@ -9,6 +9,8 @@ def uncurryTest(): Int = {
   next
 }
 
+uncurryTest()
+
 /*
 NB: There is a method on the `Function` object in the standard library,
 `Function.uncurried` that you can use for uncurrying.
@@ -24,3 +26,5 @@ println(uncurry((a: Int) => (b: Int) => a + b))
 println(uncurryTest())
 println(uncurry((a: Int) => (b: Int) => a * b)(6, 9))
 println(uncurry((a: String) => (b: String) => a + b)("You solved it, ", "Eric!"))
+
+// scala> :load ./scripts/book/exercise4.scala
