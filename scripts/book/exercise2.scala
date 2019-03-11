@@ -1,20 +1,22 @@
 // Exercise 2: Implement a polymorphic function to check whether
 // an `Array[A]` is sorted
-def isSorted[A](as: Array[A], gt: (A, A) => Boolean): Boolean = {
+def isSorted[A](as: Array[A], ordering: (A, A) => Boolean): Boolean = {
   @annotation.tailrec
-  def loop(n: Int): Boolean = {
+  def go(n: Int): Boolean =
     if (n >= as.length - 1) true
-    else if (gt(as(n), as(n + 1))) false
-    else loop(n + 1)
-  }
-  loop(0)
+    else if (ordering(as(n), as(n + 1))) false
+    else go(n + 1)
+
+  go(0)
 }
 
-println(isSorted(Array(1, 2, 3, 4), (a: Int, b: Int) => a > b))
-println(isSorted(Array(1, 2, 34, 4), (a: Int, b: Int) => a > b))
-println(isSorted(Array(10, 20, 30, 4), (a: Int, b: Int) => a > b))
+assert(isSorted(Array(1, 3, 5, 7), (x: Int, y: Int) => x > y))
+assert(!isSorted(Array(7, 5, 1, 3), (x: Int, y: Int) => x < y))
+assert(isSorted(Array("Scala", "Exercises"), (x: String, y: String) => x.length > y.length))
 
-println(isSorted(Array("cat", "mouse", "zebra"), (a: String, b: String) => a > b))
-println(isSorted(Array("cat", "mouse", "zebra", "horse"), (a: String, b: String) => a > b))
+assert(!isSorted(Array(1, 2, 34, 4), (a: Int, b: Int) => a > b))
+assert(isSorted(Array("cat", "mouse", "zebra"), (a: String, b: String) => a > b))
+assert(!isSorted(Array("cat", "mouse", "zebra", "horse"), (a: String, b: String) => a > b))
+assert(isSorted(Array(7, 5, 3, 1), (x: Int, y: Int) => x < y))
 
 // :load ./scripts/book/exercise2.scala
