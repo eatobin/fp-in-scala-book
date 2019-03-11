@@ -7,6 +7,6 @@ lazy val root = (project in file("."))
   .settings(
     name := "fp-in-scala",
     libraryDependencies ++= Seq(
-      "org.scalatest" %% "scalatest" % "3.0.5" % Test
+      "org.scalacheck" %% "scalacheck" % "1.14.0"
     )
   )
