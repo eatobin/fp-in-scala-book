@@ -1,1 +1,0 @@
-The `map2` function that we wrote earlier for `Option` will follow the same pattern for `Either`.

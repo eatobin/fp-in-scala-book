@@ -1,1 +1,0 @@
-The function shouldn't require that the two `Par` inputs have the same type.

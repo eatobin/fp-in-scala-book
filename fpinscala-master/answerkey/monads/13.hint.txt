@@ -1,1 +1,0 @@
-Join is sometimes called "flatten", and `flatMap` "maps and then flattens".

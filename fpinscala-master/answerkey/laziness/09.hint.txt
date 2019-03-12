@@ -1,2 +1,0 @@
-The example function `ones` is recursive, how could you define `from`
-recursively?
