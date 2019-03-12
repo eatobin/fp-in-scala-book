@@ -1,4 +1,4 @@
-// Exercise 4: Implement `uncurry`
+// Exercise 2.4: Implement `uncurry`
 def uncurry[A, B, C](f: A => B => C): (A, B) => C =
   (a, b) => f(a)(b)
 
@@ -34,4 +34,4 @@ def g(a: Int)(b: Int): Int = a + b
 assert(g(1)(1) == uncurry(g)(1, 1))
 assert(f(1, 1) == uncurry(g)(1, 1))
 
-// scala> :load ./scripts/book/exercise4.scala
+// scala> :load ./scripts/book/exercise2.4.scala

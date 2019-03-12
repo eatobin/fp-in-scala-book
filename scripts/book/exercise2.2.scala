@@ -1,4 +1,4 @@
-// Exercise 2: Implement a polymorphic function to check whether
+// Exercise 2.2: Implement a polymorphic function to check whether
 // an `Array[A]` is sorted
 def isSorted[A](as: Array[A], ordering: (A, A) => Boolean): Boolean = {
   @annotation.tailrec
@@ -19,4 +19,4 @@ assert(isSorted(Array("cat", "mouse", "zebra"), (a: String, b: String) => a > b)
 assert(!isSorted(Array("cat", "mouse", "zebra", "horse"), (a: String, b: String) => a > b))
 assert(isSorted(Array(7, 5, 3, 1), (x: Int, y: Int) => x < y))
 
-// :load ./scripts/book/exercise2.scala
+// scala> :load ./scripts/book/exercise2.2.scala

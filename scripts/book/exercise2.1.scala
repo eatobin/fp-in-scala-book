@@ -1,4 +1,4 @@
-// Exercise 1: Write a function to compute the nth fibonacci number
+// Exercise 2.1: Write a function to compute the nth fibonacci number
 def fib(n: Int): Int = {
   @annotation.tailrec
   def go(a: Int, b: Int, ctr: Int): Int = {
@@ -26,4 +26,4 @@ assert(fib_2(0) == 0)
 assert(fib_2(1) == 1)
 assert(fib_2(5) == 5)
 
-// scala> :load ./scripts/book/exercise1.scala
+// scala> :load ./scripts/book/exercise2.1.scala

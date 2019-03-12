@@ -1,4 +1,4 @@
-// Exercise 3: Implement `curry`.
+// Exercise 2.3: Implement `curry`.
 // Note that `=>` associates to the right, so we could
 // write the return type as `A => B => C`
 def curry[A, B, C](f: (A, B) => C): A => B => C =
@@ -29,4 +29,4 @@ def g(a: Int)(b: Int): Int = a + b
 assert(f(1, 1) == curry(f)(1)(1))
 assert(g(1)(1) == curry(f)(1)(1))
 
-// scala> :load ./scripts/book/exercise3.scala
+// scala> :load ./scripts/book/exercise2.3.scala

@@ -1,4 +1,4 @@
-// Exercise 5: Implement `compose`
+// Exercise 2.5: Implement `compose`
 def compose[A, B, C](f: B => C, g: A => B): A => C =
   a => f(g(a))
 
@@ -22,4 +22,4 @@ assert(compose(f, g)(0) != compose(g, f)(0))
 assert(compose(f, g)(2) == 2)
 assert(compose(g, f)(2) == 3)
 
-// scala> :load ./scripts/book/exercise5.scala
+// scala> :load ./scripts/book/exercise2.5.scala
