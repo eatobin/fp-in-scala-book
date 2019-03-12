@@ -22,11 +22,10 @@ we say that they are _isomorphic_ ("iso" = same; "morphe" = shape, form),
 a term we inherit from category theory.
 */
 
-// uncurry is the inverse of curry. Its first argument must be a function taking two values. uncurry then applies that function to the components of the pair which is the second argument.
-println(uncurry((a: Int) => (b: Int) => a + b))
-println(uncurryTest())
-println(uncurry((a: Int) => (b: Int) => a * b)(6, 9))
-println(uncurry((a: String) => (b: String) => a + b)("You solved it, ", "Eric!"))
+// uncurry is the inverse of curry. Its first argument must be a function taking two (curried) values. uncurry then applies that function to the components of the pair which is the second argument.
+
+uncurry((a: Int) => (b: Int) => a * b)(6, 9)
+uncurry((a: String) => (b: String) => a + b)("You solved it, ", "Eric!")
 
 def f(a: Int, b: Int): Int = a + b
 def g(a: Int)(b: Int): Int = a + b

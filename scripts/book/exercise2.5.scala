@@ -11,9 +11,7 @@ def composeTest(): Int = {
 
 composeTest()
 
-println(compose((b: Int) => b * 1, (a: Int) => a * 1))
-println(composeTest())
-println(compose((b: Int) => b * 10, (a: Int) => a + 5)(3))
+compose((b: Int) => b * 10, (a: Int) => a + 5)(3)
 
 def f(b: Int): Int = b / 2
 def g(a: Int): Int = a + 2
