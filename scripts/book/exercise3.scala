@@ -26,7 +26,7 @@ println(curry((a: String, b: String) => a + b)("Here's word 1 and ")("here's wor
 def f(a: Int, b: Int): Int = a + b
 def g(a: Int)(b: Int): Int = a + b
 
-assert(curry(f)(1)(1) == f(1, 1))
-assert(curry(f)(1)(1) == g(1)(1))
+assert(f(1, 1) == curry(f)(1)(1))
+assert(g(1)(1) == curry(f)(1)(1))
 
 // scala> :load ./scripts/book/exercise3.scala

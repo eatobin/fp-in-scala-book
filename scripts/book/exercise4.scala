@@ -1,5 +1,6 @@
 // Exercise 4: Implement `uncurry`
-def uncurry[A, B, C](f: A => B => C): (A, B) => C = (a, b) => f(a)(b)
+def uncurry[A, B, C](f: A => B => C): (A, B) => C =
+  (a, b) => f(a)(b)
 
 def uncurryTest(): Int = {
   val a: Int = 20
@@ -26,5 +27,11 @@ println(uncurry((a: Int) => (b: Int) => a + b))
 println(uncurryTest())
 println(uncurry((a: Int) => (b: Int) => a * b)(6, 9))
 println(uncurry((a: String) => (b: String) => a + b)("You solved it, ", "Eric!"))
+
+def f(a: Int, b: Int): Int = a + b
+def g(a: Int)(b: Int): Int = a + b
+
+assert(g(1)(1) == uncurry(g)(1, 1))
+assert(f(1, 1) == uncurry(g)(1, 1))
 
 // scala> :load ./scripts/book/exercise4.scala
