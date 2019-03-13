@@ -15,7 +15,7 @@ println("show(numbers99.get(9)) : " +
 
 val myList: List[String] = "My" :: ("first" :: ("list" :: Nil))
 println()
-println(myList.map((c) => c.toUpperCase))
+println(myList.map(c => c.toUpperCase))
 
 val x = 1
 def constFun1[X](x: X): Int = 1 // constFun1("jjjj")

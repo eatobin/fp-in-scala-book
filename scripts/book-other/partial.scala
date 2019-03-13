@@ -46,7 +46,7 @@ a(11, 22, 33)
 val b = sum(100, _: Int, 300)
 b(200)
 
-var more = 1
+val more = 1
 val addMore = (x: Int) => x + more
 addMore(10)
 
