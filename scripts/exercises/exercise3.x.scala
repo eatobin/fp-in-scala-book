@@ -55,7 +55,10 @@ object List { // `List` companion object. Contains functions for creating and wo
     case Cons(_, xs) => xs
   }
 
-  def setHead[A](l: List[A], h: A): List[A] = ???
+  def setHead[A](l: List[A], h: A): List[A] = l match {
+    case Nil => List()
+    case Cons(_, xs) => Cons(h, xs)
+  }
 
   def drop[A](l: List[A], n: Int): List[A] = ???
 
@@ -77,5 +80,10 @@ assert(List.x == 3)
 assert(List.tail(List(1, 2, 3)) == List(2, 3))
 assert(List.tail(List(1)) == List())
 assert(List.tail(List()) == List())
+assert(List.setHead(List(1, 2, 3), 11) == List(11, 2, 3))
+assert(List.setHead(List(1), 11) == List(11))
+assert(List.setHead(List(), 11) == List())
+
+
 
 // scala> :load ./scripts/exercises/exercise3.x.scala
