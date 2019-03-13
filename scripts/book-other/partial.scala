@@ -1,12 +1,10 @@
 // Polymorphic functions are often so constrained by their type
 // that they only have one implementation! Here's an example:
-def partial1[A, B, C](a: A, f: (A, B) => C): B => C = {
-  (b) => f(a, b)
-}
+def partial1[A, B, C](a: A, f: (A, B) => C): B => C =
+  b => f(a, b)
 
-def partial2(a: Int, f: (Int, Int) => Int): Int => Int = {
-  (b) => f(a, b)
-}
+def partial2(a: Int, f: (Int, Int) => Int): Int => Int =
+  b => f(a, b)
 
 def partial1Test(): Int = {
   val b = 3
@@ -52,4 +50,4 @@ var more = 1
 val addMore = (x: Int) => x + more
 addMore(10)
 
-// scala> :load ./scripts/book/partial.scala
+// scala> :load ./scripts/book-other/partial.scala

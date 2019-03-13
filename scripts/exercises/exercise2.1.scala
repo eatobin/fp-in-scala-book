@@ -26,4 +26,4 @@ assert(fib_2(0) == 0)
 assert(fib_2(1) == 1)
 assert(fib_2(5) == 5)
 
-// scala> :load ./scripts/book/exercise2.1.scala
+// scala> :load ./scripts/exercises/exercise2.1.scala

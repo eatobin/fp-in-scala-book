@@ -29,4 +29,4 @@ def g(a: Int)(b: Int): Int = a + b
 assert(f(1, 1) == curry(f)(1)(1))
 assert(g(1)(1) == curry(f)(1)(1))
 
-// scala> :load ./scripts/book/exercise2.3.scala
+// scala> :load ./scripts/exercises/exercise2.3.scala
