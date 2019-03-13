@@ -61,11 +61,14 @@ object List { // `List` companion object. Contains functions for creating and wo
   }
 
   def drop[A](l: List[A], n: Int): List[A] = {
-    val ctr = 1
-    l match {
-      case Nil => List()
-      case Cons(_, xs) => if (n == ctr) xs else xs
+    def loop(l: List[A], ctr: Int): List[A] = {
+      l match {
+        case Nil => List()
+        case Cons(_, xs) => if (n == ctr) xs else loop(xs, ctr + 1)
+      }
     }
+
+    loop(l, 1)
   }
 
   def dropWhile[A](l: List[A], f: A => Boolean): List[A] = ???
@@ -96,6 +99,8 @@ assert(List.setHead(List(), 11) == List())
 assert(List.drop(List(), 1) == List())
 assert(List.drop(List(1), 1) == List())
 assert(List.drop(List(1, 2, 3, 4), 1) == List(2, 3, 4))
+assert(List.drop(List(1, 2, 3, 4), 2) == List(3, 4))
+assert(List.drop(List(1, 2, 3, 4), 3) == List(4))
 
 
 // scala> :load ./scripts/exercises/exercise3.x.scala
