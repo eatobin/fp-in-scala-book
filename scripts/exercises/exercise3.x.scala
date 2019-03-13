@@ -109,6 +109,7 @@ assert(List.dropET(List(1), 1) == List())
 assert(List.dropET(List(1, 2, 3, 4), 1) == List(2, 3, 4))
 assert(List.dropET(List(1, 2, 3, 4), 2) == List(3, 4))
 assert(List.dropET(List(1, 2, 3, 4), 3) == List(4))
+assert(List.dropET(List(1, 2, 3, 4), 6) == List())
 
 assert(List.drop(List(), 1) == List())
 assert(List.drop(List(1), 1) == List())
@@ -116,6 +117,7 @@ assert(List.drop(List(1, 2, 3, 4), 1) == List(2, 3, 4))
 assert(List.drop(List(1, 2, 3, 4), 2) == List(3, 4))
 assert(List.drop(List(1, 2, 3, 4), 3) == List(4))
 assert(List.drop(List(1, 2, 3, 4), 0) == List(1, 2, 3, 4))
+assert(List.drop(List(1, 2, 3, 4), 6) == List())
 
 
 // scala> :load ./scripts/exercises/exercise3.x.scala
