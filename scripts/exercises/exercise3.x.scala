@@ -60,7 +60,13 @@ object List { // `List` companion object. Contains functions for creating and wo
     case Cons(_, xs) => Cons(h, xs)
   }
 
-  def drop[A](l: List[A], n: Int): List[A] = ???
+  def drop[A](l: List[A], n: Int): List[A] = {
+    val ctr = 1
+    l match {
+      case Nil => List()
+      case Cons(_, xs) => if (n == ctr) xs else xs
+    }
+  }
 
   def dropWhile[A](l: List[A], f: A => Boolean): List[A] = ???
 
@@ -80,10 +86,16 @@ assert(List.x == 3)
 assert(List.tail(List(1, 2, 3)) == List(2, 3))
 assert(List.tail(List(1)) == List())
 assert(List.tail(List()) == List())
+
+// Exercise 3.3
 assert(List.setHead(List(1, 2, 3), 11) == List(11, 2, 3))
 assert(List.setHead(List(1), 11) == List(11))
 assert(List.setHead(List(), 11) == List())
 
+// Exercise 3.4
+assert(List.drop(List(), 1) == List())
+assert(List.drop(List(1), 1) == List())
+assert(List.drop(List(1, 2, 3, 4), 1) == List(2, 3, 4))
 
 
 // scala> :load ./scripts/exercises/exercise3.x.scala
