@@ -50,4 +50,4 @@ val more = 1
 val addMore = (x: Int) => x + more
 addMore(10)
 
-// scala> :load ./scripts/book-other/partial.scala
+// scala> :load ./scripts/book-other/section2.6.scala

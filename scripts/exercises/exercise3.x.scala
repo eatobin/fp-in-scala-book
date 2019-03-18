@@ -23,7 +23,7 @@ object List { // `List` companion object. Contains functions for creating and wo
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))
 
-  val x = List(1, 2, 3, 4, 5) match {
+  val ls = List(1, 2, 3, 4, 5) match {
     case Cons(x, Cons(2, Cons(4, _))) => x
     case Nil => 42
     case Cons(x, Cons(y, Cons(3, Cons(4, _)))) => x + y
@@ -91,7 +91,7 @@ object List { // `List` companion object. Contains functions for creating and wo
 }
 
 // Exercise 3.1
-assert(List.x == 3)
+assert(List.ls == 3)
 
 // Exercise 3.2
 assert(List.tail(List(1, 2, 3)) == List(2, 3))
