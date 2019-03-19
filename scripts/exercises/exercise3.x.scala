@@ -79,7 +79,7 @@ object List { // `List` companion object. Contains functions for creating and wo
         case Cons(_, t) => drop(t, n - 1)
       }
 
-  def dropWhile[A](l: List[A], f: A => Boolean): List[A] = {
+  def dropWhileET[A](l: List[A], f: A => Boolean): List[A] = {
     def loop(l: List[A], nl: List[A], f: A => Boolean): List[A] = {
       l match {
         case Nil => nl
@@ -89,6 +89,12 @@ object List { // `List` companion object. Contains functions for creating and wo
 
     loop(l, List(), f)
   }
+
+  def dropWhile[A](l: List[A], f: A => Boolean): List[A] =
+    l match {
+      case Cons(h, t) if f(h) => dropWhile(t, f)
+      case _ => l
+    }
 
   def init[A](l: List[A]): List[A] = ???
 
@@ -128,5 +134,12 @@ assert(List.drop(List(1, 2, 3, 4), 3) == List(4))
 assert(List.drop(List(1, 2, 3, 4), 0) == List(1, 2, 3, 4))
 assert(List.drop(List(1, 2, 3, 4), 6) == List())
 
+// Exercise 3.5
+assert(List.dropWhileET(List(1, 2, 3, 4), (y: Int) => y == 2) == List(4, 3, 1))
+
+assert(List.dropWhile(List(1, 2, 3, 4), (y: Int) => y < 2) == List(2, 3, 4))
+assert(List.dropWhile(List(1, 2, 3, 4), (y: Int) => y <= 2) == List(3, 4))
+assert(List.dropWhile(List(1, 2, 3, 4), (y: Int) => y < 9) == List())
+assert(List.dropWhile(List(1, 2, 3, 4), (y: Int) => y < 1) == List(1, 2, 3, 4))
 
 // scala> :load ./scripts/exercises/exercise3.x.scala
