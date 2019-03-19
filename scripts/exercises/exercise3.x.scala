@@ -141,5 +141,8 @@ assert(List.dropWhile(List(1, 2, 3, 4), (y: Int) => y < 2) == List(2, 3, 4))
 assert(List.dropWhile(List(1, 2, 3, 4), (y: Int) => y <= 2) == List(3, 4))
 assert(List.dropWhile(List(1, 2, 3, 4), (y: Int) => y < 9) == List())
 assert(List.dropWhile(List(1, 2, 3, 4), (y: Int) => y < 1) == List(1, 2, 3, 4))
+assert(List.dropWhile(List(1, 2, 3), (y: Int) => y > 1) == List(1, 2, 3))
+assert(List.dropWhile(List(1, 2, 3), (y: Int) => y > 0) == List())
+assert(List.dropWhile(List(8, 2, 3), (y: Int) => y > 7) == List(2, 3))
 
 // scala> :load ./scripts/exercises/exercise3.x.scala
