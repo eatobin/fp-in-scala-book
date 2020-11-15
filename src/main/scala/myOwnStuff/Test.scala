@@ -5,27 +5,27 @@ class Foo(val name: String, val age: Int, val sex: Symbol)
 object Foo {
   def apply(name: String, age: Int, sex: Symbol) = new Foo(name, age, sex)
 
-  val fooList: List[Foo] = Foo("Hugh Jass", 25, 'male) ::
-    Foo("Biggus Dickus", 43, 'male) ::
-    Foo("Incontinentia Buttocks", 37, 'female) ::
+  val fooList: List[Foo] = Foo("Hugh Jass", 25, Symbol("male")) ::
+    Foo("Biggus Dickus", 43, Symbol("male")) ::
+    Foo("Incontinentia Buttocks", 37, Symbol("female")) ::
     Nil
 
   val stringList: List[String] = fooList.foldLeft(List[String]()) { (z, f) =>
     val title = f.sex match {
-      case 'male => "Mr."
-      case 'female => "Ms."
+      case Symbol("male") => "Mr."
+      case Symbol("female") => "Ms."
     }
     z :+ s"$title ${f.name}, ${f.age}"
   }
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     println(stringList.head) // Mr. Hugh Jass, 25
     println(stringList(2)) // Ms. Incontinentia Buttocks, 37
   }
 }
 
 object Test {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val fruit = "apples" :: ("oranges" :: ("pears" :: Nil))
     val nums = Nil
 

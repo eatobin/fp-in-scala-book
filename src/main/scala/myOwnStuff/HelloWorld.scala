@@ -25,7 +25,7 @@ import java.text.DateFormat._
 import java.util.{Date, Locale}
 
 object HelloWorld {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val now = new Date
     val df = getDateInstance(LONG, Locale.FRANCE)
     println("Hi Eric! - " + (df format now))

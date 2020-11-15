@@ -9,5 +9,3 @@ def findFirst(ss: Array[String], key: String): Int = {
 }
 
 println(findFirst(Array("Apple", "Banana", "Orange"), "Banana"))
-
-// scala> :load ./scripts/book-other/listing2.3.scala
