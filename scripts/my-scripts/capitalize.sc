@@ -10,6 +10,6 @@ def capitalize(word: String): String = {
   go(word, "")
 }
 
-capitalize("dogs")
+println(capitalize("dogs"))
 
 // scala> :load ./scripts/my-scripts/capitalize.scala
