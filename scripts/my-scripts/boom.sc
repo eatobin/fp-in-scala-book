@@ -11,4 +11,3 @@ def add(a: Int, b: Int): Int = a + b
 val add3: Int => Int = add(3, _)
 val sum = add3(5)
 println(sum)
-// OK
