@@ -19,5 +19,3 @@ def g(a: Int): Int = a + 2
 assert(compose(f, g)(0) != compose(g, f)(0))
 assert(compose(f, g)(2) == 2)
 assert(compose(g, f)(2) == 3)
-
-// scala> :load ./scripts/exercises/exercise2.5.scala

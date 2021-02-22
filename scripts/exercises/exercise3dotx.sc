@@ -1,3 +1,4 @@
+import scala.annotation.tailrec
 //package fpinscala.datastructures
 
 sealed trait List[+A] // `List` data type, parameterized on a type, `A`
@@ -61,6 +62,7 @@ object List { // `List` companion object. Contains functions for creating and wo
   }
 
   def dropET[A](l: List[A], n: Int): List[A] = {
+    @tailrec
     def loop(l: List[A], ctr: Int): List[A] = {
       l match {
         case Nil => List()
@@ -71,6 +73,7 @@ object List { // `List` companion object. Contains functions for creating and wo
     loop(l, 1)
   }
 
+  @tailrec
   def drop[A](l: List[A], n: Int): List[A] =
     if (n <= 0) l
     else
@@ -80,6 +83,7 @@ object List { // `List` companion object. Contains functions for creating and wo
       }
 
   def dropWhileET[A](l: List[A], f: A => Boolean): List[A] = {
+    @tailrec
     def loop(l: List[A], nl: List[A], f: A => Boolean): List[A] = {
       l match {
         case Nil => nl
@@ -90,19 +94,20 @@ object List { // `List` companion object. Contains functions for creating and wo
     loop(l, List(), f)
   }
 
+  @tailrec
   def dropWhile[A](l: List[A], f: A => Boolean): List[A] =
     l match {
       case Cons(h, t) if f(h) => dropWhile(t, f)
       case _ => l
     }
 
-  def init[A](l: List[A]): List[A] = ???
-
-  def length[A](l: List[A]): Int = ???
-
-  def foldLeft[A, B](l: List[A], z: B)(f: (B, A) => B): B = ???
-
-  def map[A, B](l: List[A])(f: A => B): List[B] = ???
+  //  def init[A](l: List[A]): List[A] = ???
+  //
+  //  def length[A](l: List[A]): Int = ???
+  //
+  //  def foldLeft[A, B](l: List[A], z: B)(f: (B, A) => B): B = ???
+  //
+  //  def map[A, B](l: List[A])(f: A => B): List[B] = ???
 }
 
 // Exercise 3.1
@@ -144,5 +149,3 @@ assert(List.dropWhile(List(1, 2, 3, 4), (y: Int) => y < 1) == List(1, 2, 3, 4))
 assert(List.dropWhile(List(1, 2, 3), (y: Int) => y > 1) == List(1, 2, 3))
 assert(List.dropWhile(List(1, 2, 3), (y: Int) => y > 0) == List())
 assert(List.dropWhile(List(8, 2, 3), (y: Int) => y > 7) == List(2, 3))
-
-// scala> :load ./scripts/exercises/exercise3.x.scala

@@ -18,5 +18,3 @@ assert(!isSorted(Array(1, 2, 34, 4), (a: Int, b: Int) => a > b))
 assert(isSorted(Array("cat", "mouse", "zebra"), (a: String, b: String) => a > b))
 assert(!isSorted(Array("cat", "mouse", "zebra", "horse"), (a: String, b: String) => a > b))
 assert(isSorted(Array(7, 5, 3, 1), (x: Int, y: Int) => x < y))
-
-// scala> :load ./scripts/exercises/exercise2.2.scala

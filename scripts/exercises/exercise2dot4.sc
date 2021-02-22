@@ -32,5 +32,3 @@ def g(a: Int)(b: Int): Int = a + b
 
 assert(g(1)(1) == uncurry(g)(1, 1))
 assert(f(1, 1) == uncurry(g)(1, 1))
-
-// scala> :load ./scripts/exercises/exercise2.4.scala
