@@ -8,7 +8,7 @@ lazy val root = (project in file("."))
   .settings(
     name := "fp-in-scala",
     libraryDependencies ++= Seq(
-      "org.scalacheck" %% "scalacheck" % "1.15.4"
+      "org.scalacheck" %% "scalacheck" % "1.16.0" % Test
     ),
     scalacOptions += "-deprecation"
   )
