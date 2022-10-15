@@ -1,5 +1,3 @@
-package myOwnStuff
-
 import org.scalacheck.Prop.forAll
 import org.scalacheck.Properties
 
